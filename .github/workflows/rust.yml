@@ -28,3 +28,9 @@ jobs:
       override: true
       toolchain: nightly
    - run: cargo build --release --all-features
+      - run: find .
+   - name: Upload a Build Artifact
+     uses: actions/upload-artifact@v3.1.0
+     with:
+      name: my-artifact
+      path: ./*
